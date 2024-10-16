@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+    --font-family-display: "Satoshi", "sans-serif";
+    --breakpoint-4xl: 1920px;
+    --color-*: initial;
+    --color-neon-pink: oklch(71.7% 0.25 360);
+    --color-neon-lime: oklch(91.5% 0.258 129);
+    --color-neon-cyan: oklch(91.3% 0.139 195.8);
+    --color-gray-50: #f8fafc;
+    --color-gray-100: #f1f5f9;
+    --color-gray-200: #e2e8f0;
+    --color-green-800: #3f6212;
+    --color-green-900: #365314;
+    --color-green-950: #1a2e05;
+    --color-flower-200: #0f8800;
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+.logo:hover {
+    filter: drop-shadow(0 0 2em var(--color-green-950));
+}
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em var(--color-green-950));
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+.card {
+    padding: 2em;
+}
+
+.read-the-docs {
+    color: var(--color-gray-200);
+}

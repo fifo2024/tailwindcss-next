@@ -1,4 +1,7 @@
+/* @import "tailwindcss" prefix(tw); */
 @import "tailwindcss";
+
+@plugin "tailwindcss-animate";
 
 @theme {
     --font-family-display: "Satoshi", "sans-serif";
@@ -14,6 +17,38 @@
     --color-green-900: #365314;
     --color-green-950: #1a2e05;
     --color-flower-200: #0f8800;
+
+    --color-primary: var(--color-brand);
+    --color-background: var(--color-bg);
+    --color-text: var(--color-tx);
+}
+
+/* 亮色模式 */
+[data-theme="light"] {
+    --color-brand: #1da1f2;
+    --color-bg: #ffffff;
+    --color-tx: #333333;
+}
+
+/* 深色模式 */
+[data-theme="dark"] {
+    --color-brand: #ff9800;
+    --color-bg: #1a1a1a;
+    --color-tx: #f5f5f5;
+}
+
+@layer utilities {
+    .container {
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+
+@utility container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 #root {
@@ -53,6 +88,8 @@
 
 .card {
     padding: 2em;
+    background-color: var(--color-background);
+    color: var(--color-tx);
 }
 
 .read-the-docs {
